@@ -22,6 +22,10 @@ if(cluster.isMater){
             }
         }
     }, 1000);
+    cluster.on('exit', (worker, code, signal) => {
+        console.log(`worker ${worker.process.pid} died`);
+    });
+    console.log(`Master: ${process.pid}`);
 } else{
     http.createServer(function(req, res){
         // 1/4 的概率超时
@@ -32,13 +36,13 @@ if(cluster.isMater){
         res.writeHead(200);
         res.end('hello world from ' + process.pid + '\n');
     }).listen(8000);
-    setInterval(function(){
-        process.send({
-            cmd: 'reportMem',
-            memory: process.memoryUsage(),
-            process: process.pid
-        });
-    }, 1000);
+    // setInterval(function(){
+    //     process.send({
+    //         cmd: 'reportMem',
+    //         memory: process.memoryUsage(),
+    //         process: process.pid
+    //     });
+    // }, 1000);
 }
 
 function createWorker(){

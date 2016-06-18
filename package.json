@@ -1,0 +1,30 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "node base keynote",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellyfishgh/base.git"
+  },
+  "keywords": [
+    "node",
+    "js"
+  ],
+  "author": "jellyfishgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellyfishgh/base/issues"
+  },
+  "homepage": "https://github.com/jellyfishgh/base#readme"
+}
