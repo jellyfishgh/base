@@ -1,0 +1,4 @@
+哈哈
+我是GBK编码
+你能解析我吗
+hello world
