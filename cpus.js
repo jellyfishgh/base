@@ -53,6 +53,7 @@ function createWorker() {
         lastCb: new Date().getTime() - 1000
     };
     worker.on('message', function(msg) {
+        console.log(`${msg.process} -> ${msg.memory.rss}`);
         if (msg.cmd === 'reportMem') {
             workers[msg.process].lastCb = new Date().getTime();
             if (msg.memory.rss > rssWarn) {
