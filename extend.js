@@ -1,1 +1,0 @@
-// http://keenwon.com/1524.html
